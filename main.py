@@ -23,7 +23,8 @@ def create_account(name, initial_deposit): #more functional account instead of b
     cursor = connection.cursor()
 
     cursor.execute(
-        "INSERT INTO accounts (name, balance) VALUES (?, ?)"
+        "INSERT INTO accounts (name, balance) VALUES (?, ?)", 
+        (name, initial_deposit)
     )
     connection.commit()
     account_id = cursor.lastrowid
@@ -71,7 +72,7 @@ def withdraw_money(account_id, amount):
 
     cursor.execute(
         "SELECT balance FROM accounts WHERE id = ?",
-        (account_id)
+        (account_id,)
     )
     row = cursor.fetchone()
 
@@ -101,7 +102,7 @@ def withdraw_money(account_id, amount):
 
 
 def show_welcome_menu():
-    print("/n~~~ Welcome to the Banking System! ~~~")
+    print("\n~~~ Welcome to the Banking System! ~~~")
     print("1. Create account")
     print("2. Deposit money")
     print("3. Withdraw money")
@@ -110,13 +111,13 @@ def show_welcome_menu():
     print("6. Exit")
 
 
-def main(): #not necessary? but may be useful for future use/ultimately making code shorter
+def main(): 
     initialize_database() #calls the function that creates the db and table
     account_id = create_account("John Doe", 100.0)
     if account_id is not None:
         deposit_money(account_id, 50.0)
         withdraw_money(account_id, 30.0)
 
-    show_welcome_menu
+    show_welcome_menu()
 
 main() #creates db and table, adds test account, and shows menu

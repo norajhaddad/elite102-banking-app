@@ -19,3 +19,9 @@ My project is a banking system built with Python & SqLite in Github Codespaces.
 - withdraw_money function added
 - balance validation added for withdrawals (so you can't take out money if you're like $99999 in debt)
 - basic function testing in main.py
+
+##Weeks 3 & 4 Progress
+- Added transactions table
+- Added functional menu instead of just a printed one
+- All functions of menu work as intended
+- Next step: record demo

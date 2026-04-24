@@ -17,7 +17,7 @@ My project is a banking system built with Python & SqLite in Github Codespaces.
 - create_account function updated to be less basic
 - deposit_money function added
 - withdraw_money function added
-- balance validation added for withdrawals (so you can't take out money if you're like $99999 in debt)
+- balance validation added for withdrawals (so you can't take out money if you're really in debt)
 - basic function testing in main.py
 
 ##Weeks 3 & 4 Progress
